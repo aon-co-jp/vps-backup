@@ -1,4 +1,4 @@
-# vps-curated-backup 20261114-034522
+# vps-curated-backup 20261115-034552
 
 plain      /etc/nginx/sites-enabled/aruaru.tokyo.conf
 plain      /etc/nginx/fastcgi.conf
@@ -79,6 +79,7 @@ plain      /etc/systemd/system/open-redmine.service.d/10-autorestart.conf
 ENCRYPTED  /etc/systemd/system/open-redmine.service.d/webhook-secret.conf
 plain      /etc/systemd/system/open-runo-aruaru-db.service.d/10-autorestart.conf
 plain      /etc/systemd/system/rs-sync.service.d/10-autorestart.conf
+plain      /etc/systemd/system/open-runo-aruaru-db.service.before-fix
 plain      /etc/systemd/system/rs-guard.service.d/10-autorestart.conf
 plain      /etc/systemd/system/aruaru-db-web.service.d/10-autorestart.conf
 plain      /etc/systemd/system/aruaru-db-web.service.d/base-path.conf
@@ -300,7 +301,8 @@ d1ca156e88106b712d0245a5fd462c0991e3adb419ce540efb2dd97c993bb7de  ./config/syste
 28cfd3e3920635387cc4eacd0a5802423262a7d43c743c8223957e3d0d5a2bd9  ./config/systemd/open-raid-z-web.service.d/10-autorestart.conf
 c5f423b2a5b4728b3f84eb0735f8ed3d5ddd8784ad5452a47905fcf4bb4587b3  ./config/systemd/open-raid-z-web.service.d/base-path.conf
 28cfd3e3920635387cc4eacd0a5802423262a7d43c743c8223957e3d0d5a2bd9  ./config/systemd/open-redmine.service.d/10-autorestart.conf
-456cf3428ceb583691a0f6c717cca5d03a6caa9f9c0595024a4cb2fda02e32a6  ./config/systemd/open-runo-aruaru-db.service
+7a84501c22fefc1cb72b549bb0bfdfd3a34e6a91d5e1a45e37360dbcc85330c6  ./config/systemd/open-runo-aruaru-db.service
+456cf3428ceb583691a0f6c717cca5d03a6caa9f9c0595024a4cb2fda02e32a6  ./config/systemd/open-runo-aruaru-db.service.before-fix
 28cfd3e3920635387cc4eacd0a5802423262a7d43c743c8223957e3d0d5a2bd9  ./config/systemd/open-runo-aruaru-db.service.d/10-autorestart.conf
 f82a3bbafca8c0a5908d3f5ce2d57d829b101cd7f706a27f7eeb2ede6f76d4cc  ./config/systemd/open-runo-gateway.service
 28cfd3e3920635387cc4eacd0a5802423262a7d43c743c8223957e3d0d5a2bd9  ./config/systemd/open-runo-gateway.service.d/10-autorestart.conf
@@ -339,4 +341,4 @@ aed635b900fcde968dc2f7ffb1a97e3318fa42e2d8749941606a28ab7e3615cc  ./config/syste
 10e7601b026863eb0f0de360758dff42af0bd36c338ded56e707ed32f2ce32e2  ./config/systemd/vps-data-backup.timer
 6a446851f58cc3d724e4ae83d13a485b581e51d80befe2ed496fb3c692936e6d  ./config/systemd/vps-tidy.service
 b67f35610d22b6e487b1052910d3db092f70257beda52e455700f6f0e541e480  ./config/systemd/vps-tidy.timer
-69b9abfc03ccb8903e05ab29fc403af9bcd630f332953284c9e0b1ea6ab8c66e  ./db-schema/aruaru.schema.sql
+12fcd21de43256b6af3b298efc468061a88aeaf9841ad9d206acae83a60df2f2  ./db-schema/aruaru.schema.sql
