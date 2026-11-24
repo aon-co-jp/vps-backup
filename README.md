@@ -1,3 +1,5 @@
+> Latest translations / 翻訳の最新版: [0-LATEST-TRANSLATIONS.md](0-LATEST-TRANSLATIONS.md)
+
 # vps-backup
 
 VPS(ConoHa)の**厳選バックアップ**です。本当に必要な最小限だけを、**秘密情報と個人情報を除いて**公開しています。自動生成(毎日)で、**最新の1つだけ**を置きます。
