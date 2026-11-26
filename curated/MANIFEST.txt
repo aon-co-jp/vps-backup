@@ -1,4 +1,4 @@
-# vps-curated-backup 20261126-034621
+# vps-curated-backup 20261127-034630
 
 plain      /etc/nginx/sites-enabled/aruaru.tokyo.conf
 plain      /etc/nginx/fastcgi.conf
@@ -359,4 +359,4 @@ aed635b900fcde968dc2f7ffb1a97e3318fa42e2d8749941606a28ab7e3615cc  ./config/syste
 10e7601b026863eb0f0de360758dff42af0bd36c338ded56e707ed32f2ce32e2  ./config/systemd/vps-data-backup.timer
 6a446851f58cc3d724e4ae83d13a485b581e51d80befe2ed496fb3c692936e6d  ./config/systemd/vps-tidy.service
 b67f35610d22b6e487b1052910d3db092f70257beda52e455700f6f0e541e480  ./config/systemd/vps-tidy.timer
-05b0c5b1b01588f57ab6e94a19afd711fd63a7f9f403ed6196f632533ca6817d  ./db-schema/aruaru.schema.sql
+7a08a64dec32f34ae44cf3d651b0a584ec233f65c2a54f1d7ff5e3701448f950  ./db-schema/aruaru.schema.sql
