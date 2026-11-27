@@ -1,4 +1,4 @@
-# vps-curated-backup 20261127-034630
+# vps-curated-backup 20261128-034620
 
 plain      /etc/nginx/sites-enabled/aruaru.tokyo.conf
 plain      /etc/nginx/fastcgi.conf
@@ -47,6 +47,7 @@ plain      /etc/systemd/system/aon-tokyo-server.service.d/hidden.conf
 plain      /etc/systemd/system/aruaru-search.service.d/10-autorestart.conf
 plain      /etc/systemd/system/aruaru-search.service.d/archive.conf
 plain      /etc/systemd/system/aruaru-llm.service.d/10-autorestart.conf
+plain      /etc/systemd/system/aruaru-llm.service.d/30-translate.conf
 plain      /etc/systemd/system/aruaru-llm.service.d/aruaru-search.conf
 plain      /etc/systemd/system/aruaru-llm.service.d/ocr.conf
 plain      /etc/systemd/system/pl2pl-web.service
@@ -87,6 +88,7 @@ plain      /etc/systemd/system/open-runo-aruaru-db.service.before-fix
 plain      /etc/systemd/system/rs-guard.service.d/10-autorestart.conf
 plain      /etc/systemd/system/aruaru-db-web.service.d/10-autorestart.conf
 plain      /etc/systemd/system/aruaru-db-web.service.d/base-path.conf
+plain      /etc/systemd/system/aruaru-translate.service
 plain      /etc/systemd/system/open-cg-cad.service.d/10-autorestart.conf
 plain      /etc/systemd/system/vps-data-backup.timer
 plain      /etc/systemd/system/open-web-server.service.d/admin-token.conf
@@ -117,6 +119,7 @@ ENCRYPTED  /etc/systemd/system/rs-blog.service
 plain      /etc/systemd/system/open-media-web.service
 plain      /etc/systemd/system/bdg-server.service
 plain      /etc/systemd/system/audiocafe-cron-php.service.d/knowledge-backup.conf
+plain      /etc/systemd/system/audiocafe-cron-php.service.d/20-rust-lady.conf
 plain      /etc/systemd/system/360-speaker-web.service
 plain      /etc/systemd/system/maid-news-archive.timer
 plain      /etc/systemd/system/open-english-demo.service
@@ -238,6 +241,7 @@ f38b649fe10559a447f9f39a401d4ff6e704de56d6a4acc453a244381208857a  ./config/syste
 28cfd3e3920635387cc4eacd0a5802423262a7d43c743c8223957e3d0d5a2bd9  ./config/systemd/aruaru-jobs.service.d/10-autorestart.conf
 8198b33513c17cc903441d2df8af850d801df4fc30dfbc479f04066b0b27454e  ./config/systemd/aruaru-llm.service
 28cfd3e3920635387cc4eacd0a5802423262a7d43c743c8223957e3d0d5a2bd9  ./config/systemd/aruaru-llm.service.d/10-autorestart.conf
+306bfbf105ddbe73205ba61d94fd9500af80b5a91ac2e3317bafcc04ffc6bf97  ./config/systemd/aruaru-llm.service.d/30-translate.conf
 f6e049fcc634cb7c4c8903da63946afd35379ca840f572a17b95a151448f29a9  ./config/systemd/aruaru-llm.service.d/aruaru-search.conf
 cf97dfb2b15c66f7a700319fb8ef4ef6a62c8f4bb2f4e8aac461c57bcfe7c040  ./config/systemd/aruaru-llm.service.d/ocr.conf
 ab9dd568fdaab1dad0bfc783c55468d62adaba6f615268f87873f3d39f6b7454  ./config/systemd/aruaru-llm-web.service
@@ -249,7 +253,9 @@ cbd888111e768478b1435e79f4b5e7034e012c8a4e171c39d40c8fc4f9110459  ./config/syste
 86dcb65254afeef3c83d16e330664c7f15929f0c8ff266122a2a4b4def02f7eb  ./config/systemd/aruaru.tokyo.service
 28cfd3e3920635387cc4eacd0a5802423262a7d43c743c8223957e3d0d5a2bd9  ./config/systemd/aruaru.tokyo.service.d/10-autorestart.conf
 a12d007845ebd2c23b8cc92facd2d9221635ef4692b49992f6aeb005ad5e86dd  ./config/systemd/aruaru.tokyo.service.d/tokoro.conf
+f458b5c89fb73444e837e70f582a7b11a22ecb9d56080d9bfa24f13839495d3e  ./config/systemd/aruaru-translate.service
 9c46eedb788d7e3deebd96dad9d47e64357be35d5fe54b334940c6e89b02b724  ./config/systemd/audiocafe-cron-php.service
+8cca37b2563385902394db76f2002168510c66610b9676eb1c5a088130da268d  ./config/systemd/audiocafe-cron-php.service.d/20-rust-lady.conf
 d7b26909580a389ebd7731dc2411239e964e646ffcd68e209e35a6724d97396c  ./config/systemd/audiocafe-cron-php.service.d/knowledge-backup.conf
 7671345b4da054b58b72b84c0dffa135fca36f871f80653fc68ce16358f3e793  ./config/systemd/audiocafe-cron-php.timer
 edbddde7ac016dff7f96a01b4976b47f992eece81b5bd04e4c050994d095b848  ./config/systemd/audiocafe-cron-rust.service
@@ -359,4 +365,4 @@ aed635b900fcde968dc2f7ffb1a97e3318fa42e2d8749941606a28ab7e3615cc  ./config/syste
 10e7601b026863eb0f0de360758dff42af0bd36c338ded56e707ed32f2ce32e2  ./config/systemd/vps-data-backup.timer
 6a446851f58cc3d724e4ae83d13a485b581e51d80befe2ed496fb3c692936e6d  ./config/systemd/vps-tidy.service
 b67f35610d22b6e487b1052910d3db092f70257beda52e455700f6f0e541e480  ./config/systemd/vps-tidy.timer
-7a08a64dec32f34ae44cf3d651b0a584ec233f65c2a54f1d7ff5e3701448f950  ./db-schema/aruaru.schema.sql
+348ef7e60e678d01b03fae919e9b71dca0611174de710cae26621488d2719715  ./db-schema/aruaru.schema.sql
