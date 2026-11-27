@@ -1,3 +1,3 @@
 source: aon-co-jp/vps-backup
-commit: 47be291bd33d6ca268b64ee0b6229c5c01e3fe35
-updated: 2026-11-27T18:46:33Z
+commit: 0c610a32e53299eb3f00970933b3d1a9210c8a90
+updated: 2026-11-27T22:22:11Z
